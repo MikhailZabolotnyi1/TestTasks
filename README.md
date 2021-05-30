@@ -1,4 +1,4 @@
-# Test Task
+# requirements
 * Win10 64; 
 * IntelliJ IDEA;
 * Google Chrome v90.0.4430.212 (64);
