@@ -4,7 +4,6 @@ import Pages.IFrame.IFramePage;
 import Pages.Images.ImagePreDownload;
 import Pages.Images.ImagesEncode;
 import org.junit.*;
-import org.openqa.selenium.Beta;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
