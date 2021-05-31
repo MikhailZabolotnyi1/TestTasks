@@ -14,7 +14,7 @@ public class Database {
         try {
             connection = DriverManager.getConnection("jdbc:sqlite:countries.db");
             statement = connection.createStatement();
-            // create a database connection
+
             statement.setQueryTimeout(30);  // set timeout to 30 sec.
             statement.executeUpdate("DROP TABLE IF EXISTS countries");
             statement.executeUpdate("CREATE TABLE countries (country string, population integer, area integer)");
