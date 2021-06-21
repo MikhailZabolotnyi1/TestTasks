@@ -1,8 +1,8 @@
 
-import Pages.Database.Database;
-import Pages.IFrame.IFramePage;
-import Pages.Images.ImagePreDownload;
-import Pages.Images.ImagesEncode;
+import org.junit.rules.ErrorCollector;
+import pages.database.NewDatabase;
+import pages.iFrame.IFramePage;
+import pages.images.ImageHelper;
 import org.junit.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -10,6 +10,8 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.Reader;
+import java.sql.SQLException;
 import java.util.concurrent.TimeUnit;
 
 public class Tests {
@@ -17,11 +19,11 @@ public class Tests {
     private WebDriver driver;
 
     public void prepareForDatabaseTest() {
-        Database.createDatabase();
+        NewDatabase.createDatabase();
     }
 
     public void prepareForImageTest() throws IOException {
-        ImagePreDownload.imgDownload();
+        ImageHelper.imgDownload();
     }
 
    @Before
@@ -29,25 +31,40 @@ public class Tests {
         System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
     }
 
+    @Rule
+    public ErrorCollector collector = new ErrorCollector();
+
     @Test
     public void ImageTest() throws IOException {
         System.out.println("Precondition: downloading image");
         prepareForImageTest();
 
-        System.out.println("Checking for image corresponds to example.jpeg in base64");
-        Assert.assertEquals(ImagesEncode.URLImgEncode(), ImagesEncode.LocalImgEncode());
+        try {
+            System.out.println("Checking for image corresponds to example.jpeg in base64");
+            Assert.assertEquals(ImageHelper.URLImgEncode(), ImageHelper.LocalImgEncode());
+        } catch (Throwable t) {
+            collector.addError(t);
+        }
+        System.out.println("I'm done with images");
+
     }
 
     @Test
-    public void DataBaseTest() {
+    public void DataBaseTest() throws SQLException {
         System.out.println("Precondition: creating database");
         prepareForDatabaseTest();
 
         System.out.println("checking for corresponding population density is below 50 in the USA");
-        Database.populationDensityIsLowerFifty();
+        NewDatabase.populationDensityIsLowerFifty();
 
-        System.out.println("checking for corresponding sum of all four countries is less than 2 billion");
-        Assert.assertTrue(Database.checkPopulationOfAllCountries() < 2000000000);
+
+        try {
+            System.out.println("checking for corresponding sum of all four countries is less than 2 billion");
+            Assert.assertTrue(NewDatabase.checkPopulationOfAllCountries() < 1000000000);
+        } catch (Throwable t) {
+            collector.addError(t);
+        }
+        System.out.println("I'm done boi");
 
     }
 
@@ -79,7 +96,12 @@ public class Tests {
         Assert.assertEquals("redmond washington", iFramePage.getFirstFoundSearch());
         iFramePage.clickOnFirstFoundSearch();
 
-        Assert.assertEquals("https://www.bing.com/travelguide?q=Redmond", iFramePage.getFirstSearchResultLink());
+        try {
+            Assert.assertSame("https://www.bing.com/travelguide?q=Redmond", iFramePage.getFirstSearchResultLink());
+        } catch (Throwable t) {
+            collector.addError(t);
+        }
+        System.out.println("Done with IFrame");
     }
 
     @After

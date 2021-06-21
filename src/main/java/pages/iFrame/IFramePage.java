@@ -1,4 +1,4 @@
-package Pages.IFrame;
+package pages.iFrame;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;

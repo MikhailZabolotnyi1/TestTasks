@@ -1,4 +1,4 @@
-package Pages.Images;
+package pages.images;
 
 import java.io.*;
 import java.net.URL;

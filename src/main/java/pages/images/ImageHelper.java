@@ -1,12 +1,26 @@
-package Pages.Images;
+package pages.images;
 
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.Base64;
 
-public class ImagesEncode {
+public class ImageHelper {
+
+    public static void imgDownload() throws IOException {
+
+        URL url = new URL("http://apimeme.com/meme?meme=Alarm-Clock&top=Top+text&bottom=Bottom+text");
+        InputStream in = url.openStream();
+        Files.copy(in, Paths.get("example.jpeg"), StandardCopyOption.REPLACE_EXISTING);
+        in.close();
+
+    }
 
     public static String LocalImgEncode() throws IOException {
 

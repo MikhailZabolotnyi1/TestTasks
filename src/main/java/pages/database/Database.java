@@ -1,4 +1,4 @@
-package Pages.Database;
+package pages.database;
 
 import org.junit.Assert;
 import java.sql.*;

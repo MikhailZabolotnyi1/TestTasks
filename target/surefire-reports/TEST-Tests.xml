@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="Tests" time="11.937" tests="3" errors="0" skipped="0" failures="3">
+  <properties>
+    <property name="java.specification.version" value="15"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1251"/>
+    <property name="java.class.path" value="C:\Program Files\apache-maven-3.6.3\bin\..\boot\plexus-classworlds-2.6.0.jar"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="Europe/Kiev"/>
+    <property name="maven.conf" value="C:\Program Files\apache-maven-3.6.3\bin\../conf"/>
+    <property name="java.vm.specification.version" value="15"/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="RU"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-15.0.1\bin"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean test"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="maven.home" value="C:\Program Files\apache-maven-3.6.3\bin\.."/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\Chris"/>
+    <property name="user.language" value="ru"/>
+    <property name="sun.stderr.encoding" value="cp866"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2020-10-20"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-15.0.1"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="sun.stdout.encoding" value="cp866"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="15.0.1+9-18"/>
+    <property name="user.name" value="Chris"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="Cp1251"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Temp\"/>
+    <property name="java.version" value="15.0.1"/>
+    <property name="user.dir" value="C:\Users\Chris\IdeaProjects\TestTasks"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\Chris\IdeaProjects\TestTasks"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-15.0.1\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\Python39\Scripts\;C:\Program Files\Python39\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\dotnet\;C:\Program Files (x86)\dotnet\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\Java\jdk-15.0.1\bin;C:\Program Files\apache-maven-3.6.3\bin;E:\apache-maven-3.6.3\bin;C:\Users\Chris\scoop\shims;C:\Users\Chris\AppData\Local\Microsoft\WindowsApps;C:\Users\Chris\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Chris\AppData\Roaming\npm;C:\Users\Chris\AppData\Local\GitHubDesktop\bin;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="15.0.1+9-18"/>
+    <property name="classworlds.conf" value="C:\Program Files\apache-maven-3.6.3\bin\..\bin\m2.conf"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="library.jansi.path" value="C:\Program Files\apache-maven-3.6.3\bin\..\lib\jansi-native"/>
+    <property name="java.class.version" value="59.0"/>
+  </properties>
+  <testcase name="DataBaseTest" classname="Tests" time="0.457">
+    <failure type="java.lang.AssertionError">java.lang.AssertionError
+	at Tests.DataBaseTest(Tests.java:63)
+</failure>
+    <system-out><![CDATA[Precondition: creating database
+checking for corresponding population density is below 50 in the USA
+Country = Ukraine
+Population = 41588354
+Area = 603628
+population density = 68
+Country is not USA and population density bigger than fifty : Country:Ukraine Population density:68
+Country = France
+Population = 67399000
+Area = 640679
+population density = 105
+Country is not USA and population density bigger than fifty : Country:France Population density:105
+Country = USA
+Population = 328239523
+Area = 9833520
+population density = 33
+Country is USA and population density is lower than fifty:  Country: USA Population density: 33
+Country = China
+Population = 1400050000
+Area = 9596961
+population density = 145
+Country is not USA and population density bigger than fifty : Country:China Population density:145
+checking for corresponding sum of all four countries is less than 2 billion
+Population = 41588354
+Total population: 41588354
+Population = 67399000
+Total population: 108987354
+Population = 328239523
+Total population: 437226877
+Population = 1400050000
+Total population: 1837276877
+I'm done boi
+Closing browser, clean up...
+]]></system-out>
+  </testcase>
+  <testcase name="IFrameTest" classname="Tests" time="10.907">
+    <failure message="expected same:&lt;https://www.bing.com/travelguide?q=Redmond&gt; was not:&lt;https://en.wikipedia.org/wiki/Redmond,_Washington&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected same:<https://www.bing.com/travelguide?q=Redmond> was not:<https://en.wikipedia.org/wiki/Redmond,_Washington>
+	at Tests.IFrameTest(Tests.java:100)
+]]></failure>
+    <system-out><![CDATA[Going to main page
+Replacing link to Bing.com
+Click on 'Run' button 
+Loading Bing page...
+Placing some keys to search input
+Checking for a corresponding search tip and click
+Done with IFrame
+Closing browser, clean up...
+]]></system-out>
+    <system-err><![CDATA[Starting ChromeDriver 90.0.4430.24 (4c6d850f087da467d926e8eddb76550aed655991-refs/branch-heads/4430@{#429}) on port 8333
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+[1624032946.698][WARNING]: This version of ChromeDriver has not been tested with Chrome version 91.
+июн. 18, 2021 7:15:46 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
+  </testcase>
+  <testcase name="ImageTest" classname="Tests" time="0.433">
+    <failure message="expected:&lt;...BRRRQAUUUUAJRRRQB/9k[]&gt; but was:&lt;...BRRRQAUUUUAJRRRQB/9k[=]&gt;" type="org.junit.ComparisonFailure"><![CDATA[org.junit.ComparisonFailure: expected:<...BRRRQAUUUUAJRRRQB/9k[]> but was:<...BRRRQAUUUUAJRRRQB/9k[=]>
+	at Tests.ImageTest(Tests.java:44)
+]]></failure>
+    <system-out><![CDATA[Precondition: downloading image
+Checking for image corresponds to example.jpeg in base64
+I'm done with images
+Closing browser, clean up...
+]]></system-out>
+  </testcase>
+</testsuite>

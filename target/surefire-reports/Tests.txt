@@ -1,0 +1,16 @@
+-------------------------------------------------------------------------------
+Test set: Tests
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 11.937 s <<< FAILURE! - in Tests
+DataBaseTest(Tests)  Time elapsed: 0.457 s  <<< FAILURE!
+java.lang.AssertionError
+	at Tests.DataBaseTest(Tests.java:63)
+
+IFrameTest(Tests)  Time elapsed: 10.907 s  <<< FAILURE!
+java.lang.AssertionError: expected same:<https://www.bing.com/travelguide?q=Redmond> was not:<https://en.wikipedia.org/wiki/Redmond,_Washington>
+	at Tests.IFrameTest(Tests.java:100)
+
+ImageTest(Tests)  Time elapsed: 0.433 s  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<...BRRRQAUUUUAJRRRQB/9k[]> but was:<...BRRRQAUUUUAJRRRQB/9k[=]>
+	at Tests.ImageTest(Tests.java:44)
+
